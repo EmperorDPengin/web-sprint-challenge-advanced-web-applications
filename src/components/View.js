@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+import articleService  from '../services/articleServices';
 import Article from './Article';
 import EditForm from './EditForm';
 
@@ -20,15 +21,23 @@ const View = (props) => {
         setEditId(id);
     }
 
-    const handleEditCancel = ()=>{
+    const handleEditCancel = () =>{
         setEditing(false);
     }
+
+    useEffect(() => {
+        articleService().then( artc => {
+            setArticles(artc)
+        })
+    }, [])
+
 
     return(<ComponentContainer>
         <HeaderContainer>View Articles</HeaderContainer>
         <ContentContainer flexDirection="row">
             <ArticleContainer>
                 {
+                    articles && 
                     articles.map(article => {
                         return <ArticleDivider key={article.id}>
                             <Article key={article.id} article={article} handleDelete={handleDelete} handleEditSelect={handleEditSelect}/>
