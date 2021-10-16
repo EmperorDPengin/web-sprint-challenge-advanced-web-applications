@@ -68,13 +68,13 @@ In this project, you will demonstrate your mastery of these skills by creating *
 
 ### Advanced Testing
 > *Add the following tests within Article.test.js.*
-* [ ] Build a test that shows the `Article` component, given the correct props, can render without errors.
-* [ ] Build a test that shows that when a correctly formatted article is passed into the `Article` component, the correct headline, author, summary and body are displayed.
-* [ ] The `Article` component should display "Associated Press" when an author attribute is not avalible. Build a test that verifies that that is true.
-* [ ] Build a test that show that when the deleteButton is pressed on an Article, the handleDelete functional property is executed.
+* [x] Build a test that shows the `Article` component, given the correct props, can render without errors.
+* [x] Build a test that shows that when a correctly formatted article is passed into the `Article` component, the correct headline, author, summary and body are displayed.
+* [x] The `Article` component should display "Associated Press" when an author attribute is not avalible. Build a test that verifies that that is true.
+* [x] Build a test that show that when the deleteButton is pressed on an Article, the handleDelete functional property is executed.
 
 > *Add the following tests within View.test.js.*
-* [ ] Build a test that shows the `View` component can render zero articles without errors. Make sure the mock service called made when View mounts.
+* [x] Build a test that shows the `View` component can render zero articles without errors. Make sure the mock service called made when View mounts.
 * [ ] Build a test that shows the `View` component can render three articles without errors. Make sure the mock service called made when View mounts.
 
 ## Important Notes:
@@ -112,18 +112,25 @@ In this project, you will demonstrate your mastery of these skills by creating *
 ```
 
 ## Submission format
-* [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
-* [ ] Check Codegrade before the deadline to compare its results against your local tests.
-* [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
+* [x] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
+* [x] Check Codegrade before the deadline to compare its results against your local tests.
+* [x] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [x] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 1. Explain what a token is used for.
+    A. a Token is used to identify an user session and let the developer know when an user is moving about while logged in or authorized to navigate.
 
 2. What steps can you take in your web apps to keep your data secure?
+    A. make Protected Paths and not ahve as much "static data" laying around
 
 3. Describe how web servers work.
+    A. a Server for  Web pages, that either runs in a computer or it is told by code how to run the pages. at the end it is something that is told by code how to display what we see when we request it
 
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+    Create = PUT  with new data/ POST
+    Read = GET
+    Update = PUT with existing data
+    Delete = DELETE
