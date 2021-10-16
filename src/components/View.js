@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth';
 
 import articleService  from '../services/articleServices';
 import Article from './Article';
@@ -11,12 +13,22 @@ const View = (props) => {
     const [editId, setEditId] = useState();
 
     const handleDelete = (id) => {
+
+        axiosWithAuth().delete(`http://localhost:5000/api/articles/:${id}`)
+        .then( res => {
+            setArticles(articles.filter(article => article.id !== id
+                ));
+        })
+        .catch( err => {
+            console.log('error deleting');
+        })
+        
     }
 
     const handleEdit = (article) => {
     }
 
-    const handleEditSelect = (id)=> {
+    const handleEditSelect = (id) => {
         setEditing(true);
         setEditId(id);
     }
