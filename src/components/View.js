@@ -14,10 +14,9 @@ const View = (props) => {
 
     const handleDelete = (id) => {
 
-        axiosWithAuth().delete(`http://localhost:5000/api/articles/:${id}`)
+        axiosWithAuth().delete(`http://localhost:5000/api/articles/${id}`)
         .then( res => {
-            setArticles(articles.filter(article => article.id !== id
-                ));
+            setArticles(articles.filter(article => article.id !== id));
         })
         .catch( err => {
             console.log('error deleting');
@@ -26,6 +25,14 @@ const View = (props) => {
     }
 
     const handleEdit = (article) => {
+        axiosWithAuth().put(`http://localhost:5000/api/articles/${article.id}`, article)
+        .then( res => {
+            setArticles(res.data);
+            setEditing(false);
+        })
+        .catch( err => {
+            console.log(err);
+        })
     }
 
     const handleEditSelect = (id) => {
